@@ -60,7 +60,7 @@ def compare_spectra(sig1, sig2, sr, title1, title2, suptitle):
     plt.show()
 
 # Load audio
-signal, sr = load_audio(r'YOUR AUDIO FILE.wav')
+signal, sr = load_audio(r'hotAndHeavy.wav')
 
 # --- ORIGINAL ---
 sf.write(os.path.join(OUTPUT_DIR, "original.wav"), signal, sr)
