@@ -60,8 +60,8 @@ def compare_spectra(sig1, sig2, sr, title1, title2, suptitle):
     plt.show()
 
 # Load audio
-signal, sr = load_audio(r'hotAndHeavy.wav')
-
+signal, sr = load_audio(r'comingHome.wav')
+"""
 # --- ORIGINAL ---
 sf.write(os.path.join(OUTPUT_DIR, "original.wav"), signal, sr)
 
@@ -85,6 +85,7 @@ compare_plots(signal, quantized,
 compare_spectra(signal, quantized, sr,
                 "Original Spectrum", "Quantized Spectrum",
                 "Quantisation Effect")
+
 
 # --- TIME SHIFT ---
 
@@ -135,10 +136,10 @@ plt.colorbar(format='%+2.0f dB')
 plt.title("Spectrogram (Original)")
 plt.show()
 
-
+"""
 
 # --- DFT vs FFT ---
-small_signal = signal[:1024]  # keep it small (DFT is slow)
+small_signal = signal[:512]  # keep it small (DFT is slow)
 
 # DFT timing
 start = time.time()
@@ -172,6 +173,8 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
+"""
+
 # --- CLIPPING ---
 
 clipped_hard = apply_clipping(signal, mode = 'hard')
@@ -197,6 +200,8 @@ compare_spectra(signal, clipped_soft, sr,
                 "Original Spectrum", "Soft Clipping Spectrum",
                 "Soft Clipping Effect")
 
+
+
 # --- ALIASING ---
 
 down = downsample(signal)
@@ -211,3 +216,5 @@ compare_plots(signal, down,
 compare_spectra(signal, down, new_sr,
                 "Original Spectrum", "Downsampled Spectrum",
                 "Aliasing Effect (Frequency Domain)")
+
+"""

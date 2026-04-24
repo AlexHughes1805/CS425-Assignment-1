@@ -2,7 +2,6 @@
 
 TIME_SHIFT_MS = 0
 
-
 def compute_fft(signal):
     return np.fft.fft(signal)
 
